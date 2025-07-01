@@ -46,7 +46,7 @@ const PostWidget = ({
 
   const patchLike = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/posts/${postId}/like`, {
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/posts/${postId}/like`, {
         method: "PATCH",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -63,14 +63,14 @@ const PostWidget = ({
       dispatch(setPost({ post: updatedPost }));
     } catch (err) {
       console.error("Like fetch error:", err);
-      alert("An error occurred while updating the like");
+      alert("An error occurred, please try again later");
     }
   };
 
   const handleComment = async () => {
     if (!commentText.trim()) return;
     try {
-      const response = await fetch(`http://localhost:3001/posts/${postId}/comment`, {
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/posts/${postId}/comment`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -88,7 +88,7 @@ const PostWidget = ({
       setCommentText("");
     } catch (err) {
       console.error("Comment fetch error:", err);
-      alert("An error occurred while posting the comment");
+      alert("An error occurred, please try again later");
     }
   };
 
@@ -132,7 +132,7 @@ const PostWidget = ({
           height="auto"
           alt="post"
           style={{ borderRadius: "0.75rem", marginTop: "0.75rem" }}
-          src={`http://localhost:3001/assets/${picturePath}`}
+          src={`${process.env.REACT_APP_BASE_URL}/assets/${picturePath}`}
         />
       )}
       <FlexBetween mt="0.25rem">
