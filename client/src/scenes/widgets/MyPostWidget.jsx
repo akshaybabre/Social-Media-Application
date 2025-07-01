@@ -158,9 +158,13 @@ const MyPostWidget = ({ picturePath }) => {
           disabled={!post}
           onClick={handlePost}
           sx={{
-            color: palette.background.alt,
-            backgroundColor: palette.primary.main,
+            color: "#000000", // Full black text
+            backgroundColor: palette.primary.main, // Sky blue (#33DDFB) from theme
             borderRadius: "3rem",
+            "&:hover": {
+              backgroundColor: "#000000", // Full black on hover
+              color: palette.primary.main, // Sky blue (#33DDFB) text on hover
+            },
           }}
         >
           POST

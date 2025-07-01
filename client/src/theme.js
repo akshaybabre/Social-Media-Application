@@ -1,4 +1,4 @@
-// color design tokens export
+// color design tokens
 export const colorTokens = {
   grey: {
     0: "#FFFFFF",
@@ -21,9 +21,9 @@ export const colorTokens = {
     200: "#99EEFD",
     300: "#66E6FC",
     400: "#33DDFB",
-    500: "#000",
-    600: "#00A0BC",
-    700: "#006B7D",
+    500: "#00A0BC",
+    600: "#00829A",
+    700: "#005F71",
     800: "#00353F",
     900: "#001519",
   },
@@ -36,43 +36,43 @@ export const themeSettings = (mode) => {
       mode: mode,
       ...(mode === "dark"
         ? {
-          // palette values for dark mode
-          primary: {
-            dark: colorTokens.primary[200],
-            main: colorTokens.primary[500],
-            light: colorTokens.primary[800],
-          },
-          neutral: {
-            dark: colorTokens.grey[100],
-            main: colorTokens.grey[200],
-            mediumMain: colorTokens.grey[300],
-            medium: colorTokens.grey[400],
-            light: colorTokens.grey[700],
-          },
-          background: {
-            default: colorTokens.grey[900],
-            alt: colorTokens.grey[800],
-          },
-        }
+            // palette values for dark mode
+            primary: {
+              dark: colorTokens.primary[200],
+              main: colorTokens.primary[400], // Changed to #33DDFB
+              light: colorTokens.primary[800],
+            },
+            neutral: {
+              dark: colorTokens.grey[100],
+              main: colorTokens.grey[200],
+              mediumMain: colorTokens.grey[300],
+              medium: colorTokens.grey[400],
+              light: colorTokens.grey[700],
+            },
+            background: {
+              default: colorTokens.grey[900],
+              alt: colorTokens.grey[800],
+            },
+          }
         : {
-          // palette values for light mode
-          primary: {
-            dark: colorTokens.primary[700],
-            main: colorTokens.primary[500],
-            light: colorTokens.primary[400],
-          },
-          neutral: {
-            dark: colorTokens.grey[700],
-            main: colorTokens.grey[500],
-            mediumMain: colorTokens.grey[400],
-            medium: colorTokens.grey[300],
-            light: colorTokens.grey[50],
-          },
-          background: {
-            default: colorTokens.grey[10],
-            alt: colorTokens.grey[0],
-          },
-        }),
+            // palette values for light mode
+            primary: {
+              dark: colorTokens.primary[700],
+              main: colorTokens.primary[400], // Changed to #33DDFB
+              light: colorTokens.primary[400],
+            },
+            neutral: {
+              dark: colorTokens.grey[700],
+              main: colorTokens.grey[500],
+              mediumMain: colorTokens.grey[400],
+              medium: colorTokens.grey[300],
+              light: colorTokens.grey[50],
+            },
+            background: {
+              default: colorTokens.grey[10],
+              alt: colorTokens.grey[0],
+            },
+          }),
     },
     typography: {
       fontFamily: ["Rubik", "sans-serif"].join(","),
